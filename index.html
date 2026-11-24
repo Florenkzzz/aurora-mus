@@ -26,10 +26,11 @@
       </div>
     </header>
     <nav class="side-nav" id="sideNav">
-      <button class="nav-btn active" data-target="sec-home"><span class="ico">🏠</span><span>Главная</span></button>
-      <button class="nav-btn" data-target="sec-search"><span class="ico">🔍</span><span>Поиск</span></button>
-      <button class="nav-btn" data-target="sec-fav"><span class="ico">💖</span><span>Избранное</span></button>
-      <button class="nav-btn" data-target="sec-profile"><span class="ico">⚙️</span><span>Профиль</span></button>
+      <!-- SVG ИКОНКИ ДЛЯ ДЕСКТОПА -->
+      <button class="nav-btn active" data-target="sec-home"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span>Главная</span></button>
+      <button class="nav-btn" data-target="sec-search"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span>Поиск</span></button>
+      <button class="nav-btn" data-target="sec-fav"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg><span>Избранное</span></button>
+      <button class="nav-btn" data-target="sec-profile"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg><span>Профиль</span></button>
     </nav>
   </aside>
 
@@ -43,9 +44,16 @@
         </div>
       </div>
       <div class="header-actions">
-        <button class="icon-btn" id="installBtnTop" title="Установить приложение" style="display:none;">📲<span class="pulse" id="installPulse"></span></button>
-        <button class="icon-btn" id="exportBtn" title="Экспорт">⬇️</button>
-        <button class="icon-btn" id="importBtn" title="Импорт">⬆️</button>
+        <button class="icon-btn" id="installBtnTop" title="Установить приложение" style="display:none;">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span class="pulse" id="installPulse"></span>
+        </button>
+        <button class="icon-btn" id="exportBtn" title="Экспорт">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </button>
+        <button class="icon-btn" id="importBtn" title="Импорт">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+        </button>
         <input type="file" id="importFile" accept=".json" style="display:none">
       </div>
     </header>
@@ -67,7 +75,9 @@
       <section id="sec-search" class="section">
         <div class="search-wrap">
           <input type="text" class="search-input" id="searchInput" placeholder="Найти трек, артиста, альбом...">
-          <span class="search-ico">🔍</span>
+          <span class="search-ico">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </span>
         </div>
         <div id="searchResults">
           <div class="empty"><span class="e-ico">🎵</span>Введите запрос, чтобы найти миллионы треков мира</div>
@@ -103,7 +113,7 @@
 
         <div class="sec-title">ℹ️ О приложении</div>
         <p style="color:var(--text-dim); font-size:0.85rem; line-height:1.7;">
-          <strong style="color:var(--text);">Aurora Player v2.0</strong><br>Музыка через официальное iTunes Search API.<br>PWA · Локальное хранилище · Без трекеров.
+          <strong style="color:var(--text);">Aurora Player v2.1</strong><br>Музыка через официальное iTunes Search API.<br>PWA · Локальное хранилище · Без трекеров.
         </p>
       </section>
     </main>
@@ -116,25 +126,29 @@
         <div class="p-status" id="pStatus">Выберите трек</div>
       </div>
       <div class="p-controls">
-        <button class="p-btn" id="prevBtn" title="Назад">⏮</button>
-        <button class="p-btn p-play" id="playBtn" title="Воспроизвести">▶</button>
-        <button class="p-btn" id="nextBtn" title="Вперёд">⏭</button>
+        <button class="p-btn" id="prevBtn" title="Назад">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+        </button>
+        <button class="p-btn p-play" id="playBtn" title="Воспроизвести">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" id="playIcon"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button class="p-btn" id="nextBtn" title="Вперёд">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+        </button>
       </div>
     </div>
 
     <nav class="nav" id="mobileNav">
-      <button class="nav-btn active" data-target="sec-home"><span class="ico">🏠</span><span>Главная</span></button>
-      <button class="nav-btn" data-target="sec-search"><span class="ico">🔍</span><span>Поиск</span></button>
-      <button class="nav-btn" data-target="sec-fav"><span class="ico">💖</span><span>Избранное</span></button>
-      <button class="nav-btn" data-target="sec-profile"><span class="ico">⚙️</span><span>Профиль</span></button>
+      <button class="nav-btn active" data-target="sec-home"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span>Главная</span></button>
+      <button class="nav-btn" data-target="sec-search"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span>Поиск</span></button>
+      <button class="nav-btn" data-target="sec-fav"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg><span>Избранное</span></button>
+      <button class="nav-btn" data-target="sec-profile"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg><span>Профиль</span></button>
     </nav>
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
 <audio id="audio" preload="none" crossorigin="anonymous"></audio>
-
-<!-- Подключение скриптов в конце -->
 <script src="pwa.js"></script>
 <script src="app.js"></script>
 </body>
