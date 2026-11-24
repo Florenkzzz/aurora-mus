@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#07080c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Aurora">
+<title>Aurora — премиальный музыкальный плеер</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" id="dynamicManifest">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%236a5cff'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='white'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="app" id="app">
+  <aside class="side" id="sidebar">
+    <header class="header">
+      <div class="brand">
+        <div class="brand-logo">✦</div>
+        <div>
+          <div class="brand-name">Aurora</div>
+          <div class="brand-sub">Premium Player</div>
+        </div>
+      </div>
+    </header>
+    <nav class="side-nav" id="sideNav">
+      <button class="nav-btn active" data-target="sec-home"><span class="ico">🏠</span><span>Главная</span></button>
+      <button class="nav-btn" data-target="sec-search"><span class="ico">🔍</span><span>Поиск</span></button>
+      <button class="nav-btn" data-target="sec-fav"><span class="ico">💖</span><span>Избранное</span></button>
+      <button class="nav-btn" data-target="sec-profile"><span class="ico">⚙️</span><span>Профиль</span></button>
+    </nav>
+  </aside>
+
+  <div class="main-col">
+    <header class="header" id="mobileHeader">
+      <div class="brand">
+        <div class="brand-logo">✦</div>
+        <div>
+          <div class="brand-name">Aurora</div>
+          <div class="brand-sub">Premium Player</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" id="installBtnTop" title="Установить приложение" style="display:none;">📲<span class="pulse" id="installPulse"></span></button>
+        <button class="icon-btn" id="exportBtn" title="Экспорт">⬇️</button>
+        <button class="icon-btn" id="importBtn" title="Импорт">⬆️</button>
+        <input type="file" id="importFile" accept=".json" style="display:none">
+      </div>
+    </header>
+
+    <main class="content" id="content">
+      <section id="sec-home" class="section active">
+        <div class="install-banner" id="installBanner">
+          <span class="ib-icon">📲</span>
+          <div class="ib-text"><strong>Установите Aurora</strong><br>Работает офлайн, как настоящее приложение.</div>
+          <button class="ib-btn" id="installBannerBtn">Установить</button>
+          <button class="ib-close" id="installBannerClose">✕</button>
+        </div>
+        <div class="sec-title">🎧 Тренды сегодня</div>
+        <div id="trendList"></div>
+        <div class="sec-title">🔥 Топ чартов iTunes</div>
+        <div id="topList"><div class="loading-text"><div class="spinner"></div> Загрузка...</div></div>
+      </section>
+
+      <section id="sec-search" class="section">
+        <div class="search-wrap">
+          <input type="text" class="search-input" id="searchInput" placeholder="Найти трек, артиста, альбом...">
+          <span class="search-ico">🔍</span>
+        </div>
+        <div id="searchResults">
+          <div class="empty"><span class="e-ico">🎵</span>Введите запрос, чтобы найти миллионы треков мира</div>
+        </div>
+      </section>
+
+      <section id="sec-fav" class="section">
+        <div class="sec-title">💖 Ваша коллекция</div>
+        <div id="favList">
+          <div class="empty"><span class="e-ico">💔</span>Пока пусто. Добавляйте треки в избранное звёздочкой.</div>
+        </div>
+      </section>
+
+      <section id="sec-profile" class="section">
+        <div class="sec-title">🎨 Оформление</div>
+        <div class="pref-row" id="themeRow">
+          <div class="pref-label"><span class="pref-ico">🌗</span><div><div>Тёмная тема</div><div class="pref-sub" id="themeSub">Включена</div></div></div>
+          <div class="toggle-switch" id="themeSwitch"></div>
+        </div>
+
+        <div class="sec-title">📲 Приложение</div>
+        <div class="pref-row" id="pwaRow">
+          <div class="pref-label"><span class="pref-ico">📥</span><div><div>Установить Aurora</div><div class="pref-sub" id="pwaSub">Установите на устройство</div></div></div>
+          <span style="font-size:1.2rem;color:var(--text-dim);">›</span>
+        </div>
+
+        <div class="sec-title">⚙️ Данные</div>
+        <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:24px;">
+          <button class="icon-btn" id="exportBtn2" style="width:100%; height:48px; justify-content:flex-start; padding:0 18px; gap:10px; font-size:0.9rem; font-weight:600;">⬇️ Экспорт коллекции (JSON)</button>
+          <button class="icon-btn" id="importBtn2" style="width:100%; height:48px; justify-content:flex-start; padding:0 18px; gap:10px; font-size:0.9rem; font-weight:600;">⬆️ Импорт коллекции (JSON)</button>
+          <button class="icon-btn" id="clearBtn" style="width:100%; height:48px; justify-content:flex-start; padding:0 18px; gap:10px; font-size:0.9rem; font-weight:600; color:var(--danger); border-color:rgba(255,107,107,0.3);">🗑️ Очистить все данные</button>
+        </div>
+
+        <div class="sec-title">ℹ️ О приложении</div>
+        <p style="color:var(--text-dim); font-size:0.85rem; line-height:1.7;">
+          <strong style="color:var(--text);">Aurora Player v2.0</strong><br>Музыка через официальное iTunes Search API.<br>PWA · Локальное хранилище · Без трекеров.
+        </p>
+      </section>
+    </main>
+
+    <div class="player" id="player">
+      <div class="p-progress"><div class="p-progress-fill" id="progressFill"></div></div>
+      <div class="p-cover" id="pCover">🎵</div>
+      <div class="p-meta">
+        <div class="p-title" id="pTitle">Ничего не играет</div>
+        <div class="p-status" id="pStatus">Выберите трек</div>
+      </div>
+      <div class="p-controls">
+        <button class="p-btn" id="prevBtn" title="Назад">⏮</button>
+        <button class="p-btn p-play" id="playBtn" title="Воспроизвести">▶</button>
+        <button class="p-btn" id="nextBtn" title="Вперёд">⏭</button>
+      </div>
+    </div>
+
+    <nav class="nav" id="mobileNav">
+      <button class="nav-btn active" data-target="sec-home"><span class="ico">🏠</span><span>Главная</span></button>
+      <button class="nav-btn" data-target="sec-search"><span class="ico">🔍</span><span>Поиск</span></button>
+      <button class="nav-btn" data-target="sec-fav"><span class="ico">💖</span><span>Избранное</span></button>
+      <button class="nav-btn" data-target="sec-profile"><span class="ico">⚙️</span><span>Профиль</span></button>
+    </nav>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<audio id="audio" preload="none" crossorigin="anonymous"></audio>
+
+<!-- Подключение скриптов в конце -->
+<script src="pwa.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
